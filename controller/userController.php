@@ -33,7 +33,7 @@ else {
         foreach ($userOne->errors as $error) {
             echo $error . "<br>\r\n";
         }
-        include_once __DIR__ . '/../view/registation.php';
+        include_once __DIR__ . '/../view/registration.php';
     } else {
         $sql = 'INSERT INTO users (id, login, password, name, age, gender) 
             VALUES (NULL, :login, :password, :name, :age, :gender)';
@@ -55,7 +55,7 @@ else {
         foreach ($userTwo->errors as $error) {
             echo $error . "<br>\r\n";
         }
-        include_once __DIR__ . '/../view/registation.php';
+        include_once __DIR__ . '/../view/registration.php';
     } else {
         $sql = 'INSERT INTO users (id, login, password, name, age, gender)
             VALUES (NULL, :login, :password, :name, :age, :gender)';

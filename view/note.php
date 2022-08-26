@@ -8,7 +8,7 @@
 </head>
 
 <body>
-	<form name="form" action="../controller/noteController.php" method="post" >
+	<form name="form" action="index.php" method="post" >
 		<h2>Заметки</h2>
 
 		<p>
@@ -23,7 +23,8 @@
 		<p>
 			<input class="submit" value="Отправить" type="submit" />
 		</p>
-	</form>
+        <input type="hidden" name="action" value="note/add">
+    </form>
 </body>
 
 </html>
