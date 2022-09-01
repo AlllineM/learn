@@ -8,7 +8,7 @@
 </head>
 
 <body>
-<form action="../index.php" method="post">
+<form action="../index.php/registration" method="post">
     <label>Логин</label>
     <input type="text" name="login" placeholder="Введите свой логин">
     <label>Логин2</label>
@@ -37,7 +37,6 @@
     <input type="text" name="gender" placeholder="Введите свой пол">
     <label>Пол2</label>
     <input type="text" name="gender2" placeholder="Введите свой пол">
-    <input type="hidden" name="action" value="user/registration">
 
     <button>Зарегистрируйтесь</button>
 </form>
