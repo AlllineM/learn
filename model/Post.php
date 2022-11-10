@@ -16,7 +16,7 @@ class Post {
     {
         if (mb_strlen($this->heading) < 2 || mb_strlen($this->heading) > 20)
         {
-            $this->errors[] = 'Заголовок должен иметь не меньше 2 символов и не меньше 20 символов';
+            $this->errors[] = 'Заголовок должен иметь не меньше 2 символов и не больше 20 символов';
             return false;
         } else
         {

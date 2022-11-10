@@ -1,4 +1,6 @@
 <?php
+$temp = 'ququ';
+var_dump($temp);
 require_once __DIR__ . '/../model/Database.php';
 require_once __DIR__ . '/../model/Post.php';
 
@@ -14,15 +16,15 @@ if (!$db->dbh) {
 
     $postOne->isMessageValid();
 
-	if (!empty($postOne->errors))
-	{
+	if (!empty($postOne->errors)) {
+        var_dump($temp);
         foreach ($postOne->errors as $error)
         {
             echo $error . "<br>\r\n";
         }
         include_once __DIR__ . '/../view/note.php';
-    } else
-    {
+    } else {
+        var_dump($temp);
         $sql = 'INSERT INTO posts (id, heading, message)
             VALUES (NULL, :heading, :message)';
 			$stmt = $db->dbh->prepare($sql);
