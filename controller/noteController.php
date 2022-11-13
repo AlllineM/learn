@@ -1,6 +1,6 @@
 <?php
-$temp = 'ququ';
-var_dump($temp);
+/*$temp = 'ququ';
+var_dump($temp);*/
 require_once __DIR__ . '/../model/Database.php';
 require_once __DIR__ . '/../model/Post.php';
 
@@ -17,23 +17,24 @@ if (!$db->dbh) {
     $postOne->isMessageValid();
 
 	if (!empty($postOne->errors)) {
-        var_dump($temp);
+
         foreach ($postOne->errors as $error)
         {
             echo $error . "<br>\r\n";
         }
         include_once __DIR__ . '/../view/note.php';
     } else {
-        var_dump($temp);
-        $sql = 'INSERT INTO posts (id, heading, message)
+
+        /*$sql = 'INSERT INTO posts (id, heading, message)
             VALUES (NULL, :heading, :message)';
 			$stmt = $db->dbh->prepare($sql);
 			$result = $stmt->execute([
 				'heading' => $postOne->heading,
 				'message' => $postOne->message,
-			]);
+			]);*/
+        $postOne->addToBase();
 			echo 'Ваш пост сохранен';
-            include_once __DIR__ . '/../all-posts.php';
+            include_once __DIR__ . '/all-posts.php';
     }
 
 }

@@ -1,7 +1,7 @@
 <?php
 
-require_once __DIR__ . '/model/Database.php';
-require_once __DIR__ . '/model/Post.php';
+require_once __DIR__ . '/../model/Database.php';
+require_once __DIR__ . '/../model/Post.php';
 
 $db = new \model\Database();
 
@@ -14,7 +14,7 @@ $stmt = $db->dbh->query($sql);
 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 echo '<pre>';
-/*var_dump($rows);*/
+
 
 
 foreach ($rows as $key => $item) {
@@ -26,7 +26,5 @@ foreach ($rows as $key => $item) {
     var_dump($rows[$key]['message']) . '<br>';
 }
 
-/*var_dump($rows[0]['password']);
-echo '</pre>';
-var_dump(count($rows));*/
+
 

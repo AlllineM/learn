@@ -1,8 +1,9 @@
 <?php
 
-
+$db = new \model\Database();
 
 class Post {
+    //$db = new \model\Database();
     public $heading;
     public $message;
     public $errors = [];
@@ -34,6 +35,16 @@ class Post {
         {
             return true;
         }
+    }
+
+    public function addToBase() {
+        $sql = 'INSERT INTO posts (id, heading, message)
+            VALUES (NULL, :heading, :message)';
+        $stmt = $db->dbh->prepare($sql);
+        $result = $stmt->execute([
+            'heading' => $this->heading,
+            'message' => $this->message,
+        ]);
     }
 
 }
